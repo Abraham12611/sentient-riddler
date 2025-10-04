@@ -47,6 +47,15 @@ function setupEventListeners() {
   document.getElementById('share-btn').addEventListener('click', () => {
     shareResults();
   });
+
+  // Home button
+  document.getElementById('home-btn-quiz').addEventListener('click', () => {
+    if (confirm('Are you sure you want to go back to home? Your progress will be lost.')) {
+      QuizModule.reset();
+      TimerModule.stop();
+      UIModule.showWelcomeScreen();
+    }
+  });
 }
 
 // Start Quiz
