@@ -314,6 +314,56 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Home Button */
+.btn-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-home:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-home svg {
+  flex-shrink: 0;
+}
+
+/* Watermark */
+.watermark {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background: var(--color-bg-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-tooltip);
+}
+
+.watermark a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  transition: color var(--transition-fast);
+}
+
+.watermark a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 640px) {
   .btn {
@@ -332,5 +382,22 @@ button:focus-visible {
   
   .timer-value {
     font-size: var(--font-size-xl);
+  }
+  
+  .watermark {
+    bottom: var(--space-2);
+    right: var(--space-2);
+    font-size: 10px;
+    padding: var(--space-1) var(--space-3);
+  }
+  
+  .btn-home {
+    padding: var(--space-2) var(--space-3);
+    font-size: 12px;
+  }
+  
+  .btn-home svg {
+    width: 18px;
+    height: 18px;
   }
 }
